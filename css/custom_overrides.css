@@ -1,0 +1,1345 @@
+/* Custom Overrides for Seres Salud Replica - Exact Original Enfold Theme Sizing & Structure */
+
+/* Disable all data-av_icon pseudo-elements */
+[data-av_icon]:before,
+[data-av_icon]:after {
+  content: "" !important;
+  display: none !important;
+}
+
+/* REMOVE / DISABLE DIV CLASS "av-section-color-overlay-wrap" ENTIRELY */
+.av-section-color-overlay-wrap {
+  display: contents !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Base & Typography */
+body {
+  font-family: 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Title Container / Breadcrumb Bar */
+.title_container {
+  background-color: #f8f8f8 !important;
+  border-bottom: 1px solid #e1e1e1 !important;
+  padding: 15px 0 !important;
+}
+
+.title_container .container {
+  max-width: 1310px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.title_container h1.main-title {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #666666 !important;
+  margin: 0 !important;
+}
+
+.title_container h1.main-title a {
+  color: #666666 !important;
+  text-decoration: none !important;
+}
+
+.title_container .breadcrumb {
+  font-size: 12px !important;
+  color: #888888 !important;
+}
+
+.title_container .breadcrumb a {
+  color: #666666 !important;
+  text-decoration: none !important;
+}
+
+/* Header & Container */
+#header {
+  position: relative;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 501;
+}
+
+#header_main .container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.av-logo-container {
+  height: 88px;
+  line-height: 88px;
+  position: relative;
+}
+
+.av-logo-container .inner-container {
+  position: relative !important;
+  height: 100% !important;
+  width: 100% !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.logo {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  float: left !important;
+  display: flex !important;
+  align-items: center !important;
+  z-index: 10 !important;
+}
+
+.logo a {
+  display: block !important;
+  height: 100% !important;
+}
+
+.logo img {
+  height: 100% !important;
+  max-height: 80px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Main Navigation */
+.main_menu {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  float: right !important;
+  z-index: 5 !important;
+  margin: 0 !important;
+}
+
+.main_menu ul.av-main-nav {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: right !important;
+}
+
+.main_menu ul.av-main-nav > li > a {
+  display: block;
+  padding: 0 16px;
+  height: 88px;
+  line-height: 88px;
+  color: #333333;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.main_menu ul.av-main-nav > li:hover > a,
+.main_menu ul.av-main-nav > li.current-menu-item > a {
+  color: #333333;
+}
+
+.main_menu ul.av-main-nav > li.current-menu-item > a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background-color: #438934;
+}
+
+/* Dropdown Menu */
+.main_menu ul.av-main-nav li.menu-item-has-children {
+  position: relative;
+}
+
+.main_menu ul.av-main-nav li.menu-item-has-children:hover > ul.sub-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.main_menu ul.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 240px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  border-top: 3px solid #438934;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 999;
+}
+
+.main_menu ul.sub-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #444444;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.main_menu ul.sub-menu li a:hover {
+  background-color: #f7f7f7;
+  color: #438934;
+}
+
+/* Hero Parallax Section - #av_section_1 (Index & Default Pages) */
+#av_section_1,
+.av-minimum-height-25 {
+  min-height: 250px !important;
+  height: 250px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#av_section_1 .av-parallax,
+.av-parallax-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center 30% !important;
+  background-repeat: no-repeat !important;
+  z-index: 0;
+}
+
+.av-section-color-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+#av_section_1 .container {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1310px !important;
+  width: 100% !important;
+  margin: auto !important;
+  padding: 85px 20px 30px 20px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#av_section_1 .av-rotator-container,
+#av_section_1 .av-rotator-container-inner {
+  text-align: center !important;
+  margin: 30px auto 0 auto !important;
+  width: 100% !important;
+}
+
+/* Rotator Heading inside Hero */
+.av-rotator-container h1 {
+  font-family: 'Lato', 'Open Sans', sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  margin: 0 auto !important;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-align: center !important;
+}
+
+.av-rotator-text {
+  display: block;
+  min-height: 48px;
+  margin-top: 4px;
+  text-align: center !important;
+}
+
+.av-rotator-text-single {
+  display: none !important;
+  opacity: 0;
+  font-size: 36px !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center !important;
+}
+
+.av-rotator-text-single.active {
+  display: block !important;
+  opacity: 1;
+}
+
+/* Bouncing Downward Arrow Button */
+.scroll-down-link {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  z-index: 10;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  animation: bounceArrow 2s infinite ease-in-out;
+}
+
+.scroll-down-link:after {
+  content: '⌄';
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+/* Section Headings */
+.av-special-heading-h2 h2 {
+  font-size: 28px !important;
+  font-weight: 600;
+  color: #438934;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.special-heading-border {
+  border-bottom: 2px solid #438934;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Services Layout Grid */
+#av-layout-grid-1 {
+  max-width: 1310px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#av-layout-grid-1 .av_one_half {
+  flex: 1 1 50%;
+  min-width: 320px;
+}
+
+.avia-icon-list-container ul.avia-icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.avia-icon-list li {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Dotted Connector Line between Icons */
+.avia-icon-list li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 54px;
+  bottom: -32px;
+  width: 1px;
+  border-left: 2px dotted #d6d6d6;
+  z-index: 1;
+}
+
+/* Circle Checkmark Icon */
+.iconlist_icon,
+.avia-icon-list .iconlist_icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  background-color: #dadada !important;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.iconlist_icon .iconlist-char {
+  display: none !important;
+}
+
+.iconlist_icon:before {
+  content: '✓' !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+.iconlist_content_wrap {
+  flex: 1;
+}
+
+.iconlist_title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.iconlist_content p {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #777777;
+  line-height: 1.6;
+}
+
+.iconlist_content a {
+  color: #00888b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.iconlist_content a:hover {
+  text-decoration: underline;
+}
+
+/* Right Doctor Image in Services */
+.av_one_half.av-hide-on-mobile {
+  min-height: 520px !important;
+  background-size: cover !important;
+  background-position: top center !important;
+  border-radius: 4px;
+}
+
+/* Form Section #av_section_2 (Index Page ONLY) */
+body:not(.page-id-543):not(.page-id-11) #av_section_2 {
+  min-height: 720px !important;
+  position: relative !important;
+  padding: 80px 20px !important;
+  background-image: url(../assets/images/doctor-1461912176mgQ-1500x1000.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+#av_section_2 .av-section-color-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  z-index: 1 !important;
+}
+
+body:not(.page-id-543):not(.page-id-11) #av_section_2 .container {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 900px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#av_section_2 h2 {
+  font-size: 26px !important;
+  color: #222222 !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  margin-bottom: 25px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Form Labels in Dark Green */
+.wpcf7-form p {
+  color: #398f14 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+  width: 100% !important;
+  height: 44px !important;
+  padding: 10px 14px !important;
+  font-size: 15px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 2px !important;
+  background-color: rgba(248, 248, 248, 0.9) !important;
+  color: #333333 !important;
+  margin-top: 5px !important;
+  box-sizing: border-box !important;
+}
+
+.wpcf7-form textarea {
+  height: 130px !important;
+  resize: vertical !important;
+}
+
+/* Submit Button - Teal/Green Rectangle aligned Left */
+.wpcf7-submit {
+  background-color: #0b8f72 !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 10px 28px !important;
+  border: none !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  margin: 10px 0 0 0 !important;
+  text-transform: capitalize !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.wpcf7-submit:hover {
+  background-color: #086d57 !important;
+}
+
+/* SERVICIOS PAGE STYLING MATCHING USER SCREENSHOT EXACTLY (.page-id-11) */
+.page-id-11 #av_section_1 {
+  min-height: 970px !important;
+  height: 970px !important;
+  position: relative !important;
+  padding: 0 !important;
+  background-image: url(../assets/images/doctor-1461912176mgQ-1500x1000.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+}
+
+.page-id-11 #av_section_1 .av-section-color-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  z-index: 1 !important;
+}
+
+.page-id-11 #av_section_1 .container {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1310px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+.page-id-11 .entry-content-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  gap: 40px !important;
+}
+
+/* Left Column - Servicios */
+.page-id-11 .av_two_third {
+  width: 60% !important;
+  flex: 0 0 60% !important;
+  max-width: 60% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page-id-11 .av-special-heading-h1 h1 {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #222222 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 25px 0 !important;
+  letter-spacing: 0.5px !important;
+  text-align: left !important;
+}
+
+.page-id-11 .special-heading-border {
+  display: none !important;
+}
+
+.page-id-11 .iconlist_icon,
+.page-id-11 .avia-icon-list .iconlist_icon {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  background-color: #617937 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+}
+
+.page-id-11 .iconlist_icon:before {
+  content: '✓' !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.page-id-11 .iconlist_title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #222222 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 6px !important;
+  text-align: left !important;
+}
+
+.page-id-11 .iconlist_content p {
+  font-size: 14px !important;
+  color: #777777 !important;
+  line-height: 1.6 !important;
+  margin: 0 0 4px 0 !important;
+  text-align: left !important;
+}
+
+.page-id-11 .iconlist_content a {
+  color: #0b8f72 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.page-id-11 .iconlist_content a:hover {
+  text-decoration: underline !important;
+}
+
+/* Right Column - Envianos Tu Consulta Form */
+.page-id-11 .av_one_third {
+  width: 35% !important;
+  flex: 0 0 35% !important;
+  max-width: 35% !important;
+  padding: 0 !important;
+  margin-left: auto !important;
+}
+
+.page-id-11 .avia_textblock h5 {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #333333 !important;
+  line-height: 1.5 !important;
+  margin: 0 0 20px 0 !important;
+  text-align: left !important;
+}
+
+.page-id-11 .hr-short {
+  display: none !important;
+}
+
+.page-id-11 .wpcf7-form h2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #222222 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  text-align: left !important;
+}
+
+.page-id-11 .wpcf7-form p {
+  color: #0b8f72 !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  margin-bottom: 15px !important;
+  text-align: left !important;
+}
+
+.page-id-11 .wpcf7-form input[type="text"],
+.page-id-11 .wpcf7-form input[type="email"],
+.page-id-11 .wpcf7-form textarea {
+  width: 100% !important;
+  height: 42px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 2px !important;
+  background-color: rgba(248, 248, 248, 0.9) !important;
+  color: #333333 !important;
+  margin-top: 4px !important;
+}
+
+.page-id-11 .wpcf7-form textarea {
+  height: 110px !important;
+}
+
+.page-id-11 .wpcf7-submit {
+  background-color: #0b8f72 !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+}
+
+/* CONTACT PAGE ONLY: EXACT SIDE-BY-SIDE ALIGNMENT MATCHING USER SCREENSHOT */
+.page-id-15 #av_section_1 {
+  height: 1093.28px !important;
+  min-height: 1093.28px !important;
+  position: relative !important;
+  padding: 0 !important;
+  background-image: url(../assets/images/doctor-1461912176mgQ-1500x1000.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  overflow: hidden !important;
+}
+
+.page-id-15 #av_section_1 .av-section-color-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  z-index: 1 !important;
+}
+
+.page-id-15 #av_section_1 .container {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1310px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  text-align: left !important;
+}
+
+.page-id-15 .entry-content-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.page-id-15 .av_three_fifth {
+  width: 55% !important;
+  flex: 0 0 55% !important;
+  max-width: 55% !important;
+  box-sizing: border-box !important;
+}
+
+.page-id-15 .av_two_fifth {
+  width: 38% !important;
+  flex: 0 0 38% !important;
+  max-width: 38% !important;
+  margin-left: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Right Column Contact Information (CONTÁCTENOS) */
+.av_two_fifth h3 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #222222 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 12px 0 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.av_two_fifth .hr-default {
+  border-bottom: 2px solid #e5e5e5 !important;
+  margin-bottom: 25px !important;
+  display: block !important;
+}
+
+.av_two_fifth .textwidget h3 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #222222 !important;
+  text-transform: none !important;
+  margin: 0 0 10px 0 !important;
+}
+
+/* Action Buttons side-by-side in Contact Page */
+.av_two_fifth .avia-button-wrap {
+  display: inline-block !important;
+  margin-right: 12px !important;
+  margin-top: 15px !important;
+}
+
+.av_two_fifth a.avia-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 20px !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.av_two_fifth a.avia-button:hover {
+  opacity: 0.9 !important;
+}
+
+.av_two_fifth .avia-color-custom {
+  background-color: #25d366 !important;
+  color: #ffffff !important;
+}
+
+.av_two_fifth .avia-color-custom .avia_button_icon_left:before {
+  content: '💬 ' !important;
+  font-size: 14px !important;
+}
+
+.av_two_fifth .avia-color-blue {
+  background-color: #5c9ce6 !important;
+  color: #ffffff !important;
+}
+
+.av_two_fifth .avia-color-blue .avia_button_icon_left:before {
+  content: '✉ ' !important;
+  font-size: 14px !important;
+}
+
+/* PLANES DE MEDICINA ASISTENCIAL - FIX OVERLAPPING SECTIONS (PAGE ID 543) */
+.page-id-543 #main .avia-section {
+  position: relative !important;
+  display: block !important;
+  clear: both !important;
+  float: none !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* PLANES PAGE MAIN TITLE COLOR IN GREEN (#438934) */
+.page-id-543 .av-rotator-container h1,
+.page-id-543 .av-rotator-container h1.av-rotator-container-inner,
+.page-id-543 .av-rotator-container h1 .av-rotator-text-single {
+  color: #438934 !important;
+}
+
+/* "TODOS LOS PLANES INCLUYEN" SECTION (#planes) - ROTATOR TEXT STYLING */
+.page-id-543 #planes {
+  background-color: #ffffff !important;
+  padding: 40px 0 !important;
+}
+
+.page-id-543 #planes .container {
+  max-width: 1310px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.page-id-543 #planes .entry-content-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.page-id-543 #planes .av_one_fourth {
+  flex: 0 0 22% !important;
+  max-width: 22% !important;
+}
+
+.page-id-543 #planes .av_one_half {
+  flex: 1 1 50% !important;
+  text-align: center !important;
+}
+
+.page-id-543 #planes h2.av-rotator-container-inner {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: #438934 !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.page-id-543 #planes .av-rotator-text {
+  display: block !important;
+  min-height: 36px !important;
+  margin-top: 6px !important;
+}
+
+.page-id-543 #planes .av-rotator-text-single {
+  display: none !important;
+  opacity: 0;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  color: #438934 !important;
+  transition: opacity 0.4s ease-in-out !important;
+  text-transform: none !important;
+}
+
+.page-id-543 #planes .av-rotator-text-single.active {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* PRICING TABLES SECTION (#av_section_2) */
+.page-id-543 #av_section_2 {
+  background-color: #f2f7f1 !important;
+  padding: 50px 0 !important;
+}
+
+.page-id-543 #av_section_2 .av-section-color-overlay {
+  background-color: transparent !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+}
+
+.page-id-543 #av_section_2 .container {
+  max-width: 1350px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+.page-id-543 #av_section_2 .flex_column_table {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 15px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.page-id-543 #av_section_2 .av_one_fifth {
+  flex: 1 1 calc(20% - 12px) !important;
+  max-width: 20% !important;
+  min-width: 0 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #7ea875 !important;
+  border-radius: 10px !important;
+  padding: 24px 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+  margin: 0 !important;
+}
+
+.page-id-543 #av_section_2 .av-flex-placeholder {
+  display: none !important;
+}
+
+/* Card Header Sizing & Font Styling */
+.page-id-543 #av_section_2 .av-special-heading {
+  padding: 0 !important;
+  margin: 0 0 10px 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.page-id-543 #av_section_2 h2.av-special-heading-tag {
+  font-size: 21px !important;
+  font-weight: 300 !important;
+  color: #444444 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 4px 0 !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+}
+
+.page-id-543 #av_section_2 .av-subheading p {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #00888b !important;
+  text-transform: uppercase !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+}
+
+.page-id-543 #av_section_2 .special-heading-border {
+  display: none !important;
+}
+
+/* Button "Consultar" */
+.page-id-543 #av_section_2 a.avia-button {
+  background-color: #0b8f72 !important;
+  color: #ffffff !important;
+  padding: 6px 18px !important;
+  border-radius: 3px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  margin: 0 auto !important;
+}
+
+.page-id-543 #av_section_2 a.avia-button .avia_button_icon_left:before {
+  content: '💬 ' !important;
+  font-size: 12px !important;
+}
+
+/* List of Features inside each Card */
+.page-id-543 #av_section_2 .avia-icon-list-container {
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.page-id-543 #av_section_2 ul.avia-icon-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.page-id-543 #av_section_2 ul.avia-icon-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  margin-bottom: 12px !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  color: #333333 !important;
+  position: relative !important;
+}
+
+.page-id-543 #av_section_2 ul.avia-icon-list li:after {
+  display: none !important;
+}
+
+.page-id-543 #av_section_2 .iconlist_icon {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  float: none !important;
+  margin: 0 !important;
+  display: inline-block !important;
+}
+
+.page-id-543 #av_section_2 .iconlist_icon:before {
+  content: '✓' !important;
+  color: #438934 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+.page-id-543 #av_section_2 .iconlist_content_wrap {
+  flex: 1 !important;
+}
+
+.page-id-543 #av_section_2 .av_iconlist_title {
+  font-size: 12.5px !important;
+  color: #333333 !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+/* FORM SECTION (#av_section_4) - KEEPING ORIGINAL BACKGROUND IMAGE & EXACT OVERLAY WRAP HEIGHT (897.36px) */
+.page-id-543 #av_section_4 {
+  height: 897.36px !important;
+  min-height: 897.36px !important;
+  position: relative !important;
+  background-image: url(../assets/images/Pink-Geometric-Pattern-Medical-Presentation.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  display: block !important;
+}
+
+.page-id-543 #av_section_4 .av-section-color-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  z-index: 1 !important;
+}
+
+.page-id-543 #av_section_4 .container {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 850px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* "CONVENIO CON AYUDA MEDICA" SECTION (#av_section_5) */
+.page-id-543 #av_section_5 {
+  background-color: #f9f9f9 !important;
+  padding: 60px 0 !important;
+}
+
+.page-id-543 #av_section_5 .container {
+  max-width: 1310px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.page-id-543 #av_section_5 h2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #333333 !important;
+  margin-bottom: 8px !important;
+}
+
+.page-id-543 #av_section_5 ul {
+  padding-left: 20px !important;
+  margin-top: 20px !important;
+}
+
+.page-id-543 #av_section_5 ul li {
+  margin-bottom: 16px !important;
+  line-height: 1.6 !important;
+  font-size: 15px !important;
+  color: #444444 !important;
+}
+
+/* FOOTER & SOCKET STYLING MATCHING EXACT ORIGINAL MEASUREMENTS (400x300 MAP, 40px PADDING) */
+#footer {
+  background-color: #33373a !important;
+  color: #ffffff !important;
+  padding: 40px 0 30px 0 !important;
+  border-top: none !important;
+}
+
+#footer .container {
+  max-width: 1310px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 30px !important;
+}
+
+#footer .av_one_half {
+  flex: 1 1 calc(50% - 15px) !important;
+  min-width: 320px !important;
+  margin: 0 !important;
+}
+
+#footer .widget {
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+}
+
+#footer iframe {
+  width: 400px !important;
+  max-width: 100% !important;
+  height: 300px !important;
+  border-radius: 2px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+#footer .wp-block-paragraph {
+  font-size: 16px !important;
+  color: #e1e1e1 !important;
+  margin-bottom: 18px !important;
+  font-weight: 400 !important;
+}
+
+#footer .wp-block-heading,
+#footer h3 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 12px !important;
+  line-height: 1.5 !important;
+}
+
+#footer a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+#footer a:hover {
+  text-decoration: underline !important;
+}
+
+/* SOCKET FOOTER BAR AT THE VERY BOTTOM */
+#socket {
+  background-color: #222527 !important;
+  color: #888888 !important;
+  padding: 15px 0 !important;
+  border-top: 1px solid #2a2e31 !important;
+}
+
+#socket .container {
+  max-width: 1310px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+}
+
+#socket .copyright {
+  font-size: 12px !important;
+  color: #888888 !important;
+}
+
+#socket .copyright a {
+  color: #888888 !important;
+  text-decoration: none !important;
+}
+
+#socket ul.social_bookmarks {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  gap: 16px !important;
+  align-items: center !important;
+}
+
+#socket ul.social_bookmarks li a {
+  font-size: 12px !important;
+  color: #aaaaaa !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+#socket ul.social_bookmarks li a:hover {
+  color: #ffffff !important;
+}
+
+/* FLOATING WHATSAPP BUTTON ON BOTTOM RIGHT */
+.whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  background-color: #25d366 !important;
+  color: #ffffff !important;
+  padding: 12px 22px !important;
+  border-radius: 30px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: translateY(-2px) !important;
+  background-color: #20ba5a !important;
+  color: #ffffff !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 989px) {
+  .av-logo-container .inner-container {
+    height: 70px;
+  }
+  .logo img {
+    height: 50px;
+  }
+  #av_section_1 {
+    min-height: 200px !important;
+    height: 200px !important;
+  }
+  .av-rotator-container h1 {
+    font-size: 24px !important;
+  }
+  .av-rotator-text-single {
+    font-size: 22px !important;
+  }
+  #av-layout-grid-1 .av_one_half {
+    flex: 1 1 100%;
+  }
+  .av_one_half.av-hide-on-mobile {
+    display: none !important;
+  }
+  .page-id-15 .av_three_fifth,
+  .page-id-15 .av_two_fifth,
+  .page-template-default .av_three_fifth,
+  .page-template-default .av_two_fifth,
+  .page-id-11 .av_two_third,
+  .page-id-11 .av_one_third {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
