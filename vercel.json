@@ -1,24 +1,15 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/servicios", "destination": "/servicios/index.html" },
-    { "source": "/servicios/", "destination": "/servicios/index.html" },
-    { "source": "/contacto", "destination": "/contacto/index.html" },
-    { "source": "/contacto/", "destination": "/contacto/index.html" },
-    { "source": "/planes-medicina-asistencial", "destination": "/planes-medicina-asistencial/index.html" },
-    { "source": "/planes-medicina-asistencial/", "destination": "/planes-medicina-asistencial/index.html" },
-    { "source": "/especialidades", "destination": "/especialidades/index.html" },
-    { "source": "/especialidades/", "destination": "/especialidades/index.html" },
-    { "source": "/pediatria", "destination": "/pediatria/index.html" },
-    { "source": "/pediatria/", "destination": "/pediatria/index.html" },
-    { "source": "/medico-clinico", "destination": "/medico-clinico/index.html" },
-    { "source": "/medico-clinico/", "destination": "/medico-clinico/index.html" },
-    { "source": "/kinesiologia", "destination": "/kinesiologia/index.html" },
-    { "source": "/kinesiologia/", "destination": "/kinesiologia/index.html" },
-    { "source": "/emergencias", "destination": "/emergencias/index.html" },
-    { "source": "/emergencias/", "destination": "/emergencias/index.html" },
-    { "source": "/estudios-practicas-medicas", "destination": "/estudios-practicas-medicas/index.html" },
-    { "source": "/estudios-practicas-medicas/", "destination": "/estudios-practicas-medicas/index.html" }
+  "version": 2,
+  "routes": [
+    { "src": "/servicios/?", "dest": "/servicios/index.html" },
+    { "src": "/contacto/?", "dest": "/contacto/index.html" },
+    { "src": "/planes-medicina-asistencial/?", "dest": "/planes-medicina-asistencial/index.html" },
+    { "src": "/especialidades/?", "dest": "/especialidades/index.html" },
+    { "src": "/pediatria/?", "dest": "/pediatria/index.html" },
+    { "src": "/medico-clinico/?", "dest": "/medico-clinico/index.html" },
+    { "src": "/kinesiologia/?", "dest": "/kinesiologia/index.html" },
+    { "src": "/emergencias/?", "dest": "/emergencias/index.html" },
+    { "src": "/estudios-practicas-medicas/?", "dest": "/estudios-practicas-medicas/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
