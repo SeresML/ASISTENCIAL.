@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 4. Form Submission Simulation
   initForms();
+
+  // 5. Floating WhatsApp Button
+  initFloatingWhatsApp();
 });
 
 function initMobileMenu() {
@@ -246,4 +249,28 @@ function initForms() {
       responseDiv.innerHTML = '✓ Gracias por tu mensaje. Ha sido enviado correctamente.';
     });
   });
+}
+
+function initFloatingWhatsApp() {
+  if (document.querySelector('.seres-floating-whatsapp')) return;
+
+  const btn = document.createElement('a');
+  btn.className = 'seres-floating-whatsapp';
+  btn.href = 'https://wa.link/a847bh';
+  btn.target = '_blank';
+  btn.rel = 'noopener noreferrer';
+  btn.setAttribute('aria-label', 'Contactar por WhatsApp');
+  btn.setAttribute('title', '¡Hola! Escribinos por WhatsApp');
+
+  btn.innerHTML = `
+    <span class="whatsapp-tooltip">¿En qué te podemos ayudar?</span>
+    <div class="whatsapp-icon-wrapper">
+      <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
+        <path d="M16.002 0C7.164 0 0 7.163 0 16c0 2.825.738 5.488 2.025 7.788L.069 31.25a.8.8 0 00.988.981l7.637-1.994A15.93 15.93 0 0016.002 32C24.837 32 32 24.837 32 16S24.837 0 16.002 0zm0 29.333c-2.488 0-4.837-.675-6.863-1.85a.8.8 0 00-.587-.088l-5.612 1.463 1.487-5.463a.8.8 0 00-.087-.637A13.238 13.238 0 012.667 16C2.667 8.644 8.644 2.667 16.002 2.667 23.356 2.667 29.333 8.644 29.333 16c0 7.356-5.977 13.333-13.331 13.333zm7.65-9.875c-.412-.213-2.462-1.213-2.837-1.35-.375-.138-.65-.213-.925.213-.275.412-1.063 1.35-1.3 1.625-.238.275-.475.313-.888.1a11.168 11.168 0 01-3.287-2.025 12.308 12.308 0 01-2.275-2.838c-.238-.412-.025-.637.175-.85.187-.188.412-.488.625-.725.212-.238.275-.413.412-.688.138-.275.063-.525-.037-.725s-.925-2.238-1.275-3.063c-.338-.8-.688-.688-.938-.7-.237-.012-.512-.012-.787-.012s-.725.1-1.1.512c-.375.413-1.438 1.4-1.438 3.413 0 2.012 1.463 3.962 1.675 4.237.213.275 2.875 4.4 6.975 6.163.975.425 1.738.675 2.338.863 1.013.325 1.938.275 2.663.175.812-.113 2.462-1.012 2.812-1.987.35-.975.35-1.813.25-1.988-.1-.175-.375-.275-.788-.475z"/>
+      </svg>
+    </div>
+    <span class="whatsapp-pulse"></span>
+  `;
+
+  document.body.appendChild(btn);
 }
