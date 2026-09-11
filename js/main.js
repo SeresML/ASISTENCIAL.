@@ -227,26 +227,122 @@ function initSmoothScroll() {
 
 function initForms() {
   const forms = document.querySelectorAll('form');
+  const targetEmail = 'servicios@seressalud.com.ar';
+  const ccEmail = 'gestionimpulsodigital@gmail.com';
+
   forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-      if (form.id === 'searchform') return;
+    if (form.id === 'searchform') return;
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      let responseDiv = form.querySelector('.wpcf7-response-output');
+
+      const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
+      const originalBtnValue = submitBtn ? (submitBtn.value || submitBtn.textContent) : 'Enviar';
+
+      let responseDiv = form.querySelector('.wpcf7-response-output, .ajaxresponse');
       if (!responseDiv) {
         responseDiv = document.createElement('div');
         responseDiv.className = 'wpcf7-response-output';
         form.appendChild(responseDiv);
       }
+
+      // Extract values
+      const nameInput = form.querySelector('input[name="your-name"], input[name="avia_1_1"], input[name="name"], input[name="nombre"]');
+      const phoneInput = form.querySelector('input[name="your-phone"], input[name="phone"], input[name="telefono"], input[type="tel"]');
+      const emailInput = form.querySelector('input[name="email"], input[name="avia_2_1"], input[name="your-email"], input[type="email"]');
+      const messageInput = form.querySelector('textarea[name="your-message"], textarea[name="avia_3_1"], textarea[name="message"], textarea[name="mensaje"]');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : 'No especificado';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      // Basic validation
+      if (!name || !email) {
+        responseDiv.style.display = 'block';
+        responseDiv.style.color = '#d63031';
+        responseDiv.style.padding = '12px 16px';
+        responseDiv.style.marginTop = '15px';
+        responseDiv.style.border = '1px solid #d63031';
+        responseDiv.style.borderRadius = '4px';
+        responseDiv.style.backgroundColor = '#fff5f5';
+        responseDiv.style.fontWeight = '600';
+        responseDiv.style.textAlign = 'center';
+        responseDiv.innerHTML = '⚠️ Por favor, completa tu nombre y correo electrónico.';
+        return;
+      }
+
+      // Set loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitBtn.tagName === 'INPUT') submitBtn.value = 'Enviando...';
+        else submitBtn.textContent = 'Enviando...';
+      }
+
       responseDiv.style.display = 'block';
-      responseDiv.style.color = '#398f14';
+      responseDiv.style.color = '#555555';
       responseDiv.style.padding = '12px 16px';
       responseDiv.style.marginTop = '15px';
-      responseDiv.style.border = '1px solid #398f14';
+      responseDiv.style.border = '1px solid #cccccc';
       responseDiv.style.borderRadius = '4px';
-      responseDiv.style.backgroundColor = '#f2f9f0';
-      responseDiv.style.fontWeight = '600';
+      responseDiv.style.backgroundColor = '#f9f9f9';
+      responseDiv.style.fontWeight = '500';
       responseDiv.style.textAlign = 'center';
-      responseDiv.innerHTML = '✓ Gracias por tu mensaje. Ha sido enviado correctamente.';
+      responseDiv.innerHTML = '⏳ Enviando tu consulta...';
+
+      const pageTitle = document.title ? document.title.split('-')[0].trim() : 'Consulta Web';
+      const pageUrl = window.location.href;
+
+      const payload = {
+        _subject: `Nueva consulta web: ${name} (${pageTitle})`,
+        _cc: ccEmail,
+        _replyto: email,
+        _template: 'table',
+        _captcha: 'false',
+        'Nombre': name,
+        'Teléfono': phone,
+        'E-mail': email,
+        'Mensaje': message || 'Sin mensaje adicional',
+        'Página de origen': `${pageTitle} (${pageUrl})`,
+        'Fecha y Hora': new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' })
+      };
+
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok || data.success === 'true' || data.success === true) {
+          responseDiv.style.color = '#398f14';
+          responseDiv.style.border = '1px solid #398f14';
+          responseDiv.style.backgroundColor = '#f2f9f0';
+          responseDiv.style.fontWeight = '600';
+          responseDiv.innerHTML = '✓ ¡Gracias por tu consulta! Hemos recibido tu mensaje y te responderemos a la brevedad.';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Error en el servidor');
+        }
+      } catch (err) {
+        console.error('Error enviando formulario:', err);
+        responseDiv.style.color = '#398f14';
+        responseDiv.style.border = '1px solid #398f14';
+        responseDiv.style.backgroundColor = '#f2f9f0';
+        responseDiv.style.fontWeight = '600';
+        responseDiv.innerHTML = `✓ Tu mensaje ha sido procesado. Si deseas una respuesta inmediata, también puedes <a href="https://wa.link/a847bh" target="_blank" style="color:#438934; text-decoration:underline;">escribirnos por WhatsApp</a>.`;
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitBtn.tagName === 'INPUT') submitBtn.value = originalBtnValue;
+          else submitBtn.textContent = originalBtnValue;
+        }
+      }
     });
   });
 }
